@@ -4,11 +4,15 @@
 This library provides functions to control an LED matrix using an ESP8266 microcontroller. It allows for horizontal and vertical scrolling of text, as well as basic LED manipulation.It also comes with a python program to sent it basic patterns over wifi via udp port.
 
 ## 🚀Installation
-    To use this library, download the `LEDMatrix.h` and `LEDMatrix.cpp` files and 
-    git clone https://github.com/circuito-suman/sprites_generator.git
-    cd sprites_generator
+    To use this library, download it from the release page 
+or
+```
+    git clone https://github.com/circuito-suman/74HC595ledmatrixlibrary
+    cd 74HC595ledmatrixlibrary
+```
 
 ## 🛠Usage
+
 ### Initialization
 ```
 
@@ -79,6 +83,7 @@ ledMatrix.scrollUpToDown(scrollspeed);
 ## 🔌Dependencies
 
     OtaHelper (Optional): Provides over-the-air update functionality.
+    ESP8266WebServer for web based text update
 
 
 
