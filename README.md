@@ -97,14 +97,6 @@ Include images here.
 Include schematic diagram here.
 ![8x8 matrix cross](examples/demo2.jpg)
 
-## custom webserver to sent text to the matrix 
-
-![Webview](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-## Python Program  
-
-![Webview](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
 
 ## 🙏 Acknowledgements
 Thank you for checking out this project! If you have any questions or suggestions, feel free to open an issue or reach out to me on social media. Happing learning 💻✨
