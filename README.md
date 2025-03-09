@@ -1,11 +1,15 @@
 # 💡LEDMatrix Library
 
 ## Introduction
-This library provides functions to control an LED matrix using an ESP8266 microcontroller. It allows for horizontal and vertical scrolling of text, as well as basic LED manipulation.It also comes with a python program to sent it basic patterns over wifi via udp port.
+
+This library provides functions to control an LED matrix using an ESP8266 microcontroller. It allows for horizontal and vertical scrolling of text, as well as basic LED manipulation.
 
 ## 🚀Installation
-    To use this library, download it from the release page 
+
+    To use this library, download it from the release page
+
 or
+
 ```
     git clone https://github.com/circuito-suman/74HC595ledmatrixlibrary
     cd 74HC595ledmatrixlibrary
@@ -13,7 +17,15 @@ or
 
 ## 🛠Usage
 
+### NOTE
+
+```
+Always call the but() function for handling the switch between WiFi STATION mode and WiFi AP mode.
+
+```
+
 ### Initialization
+
 ```
 
 #include "LEDMatrix.h"
@@ -35,8 +47,6 @@ void setup() {
 
 ## Text Scrolling
 
-
-
 ```
 void loadString(const char *text);
 void scrollLeftToRight(int n);
@@ -46,6 +56,7 @@ void scrollDownToUp(int n);
 ```
 
 ## Advanced Functions
+
 ```
     void shiftLeft(int delayTime): Shifts LEDs to the left.
     void shiftRight(int delayTime): Shifts LEDs to the right.
@@ -54,7 +65,9 @@ void scrollDownToUp(int n);
 
 ```
 
-### Demo  Example
+### for testing purpose also can use the src.ino file in the src folder
+
+### Demo Example
 
 ```
 
@@ -80,44 +93,35 @@ ledMatrix.scrollUpToDown(scrollspeed);
 }
 
 ```
+
 ## 🔌Dependencies
 
-    OtaHelper (Optional): Provides over-the-air update functionality.
+    OtaHelper (Optional): Provides over-the-air update functionality in AP mode only.
     ESP8266WebServer for web based text update
 
-
-
-
 ### Images
+
 Include images here.
 ![8x8 matrix cross](examples/demo2.jpg)
 
-
 ### Schematic
+
 Include schematic diagram here.
 ![8x8 matrix cross](examples/demo2.jpg)
 
-
 ## 🙏 Acknowledgements
-Thank you for checking out this project! If you have any questions or suggestions, feel free to open an issue or reach out to me on social media. Happing learning 💻✨
 
+Thank you for checking out this project! If you have any questions or suggestions, feel free to open an issue or reach out to me on social media. Happing learning 💻✨
 
 ## Authors
 
 - [@circuito-suman](https://www.github.com/circuito-suman)
 
-
 ![Logo](https://avatars.githubusercontent.com/u/125496903?v=4)
-
-
-
 
 ## Contributing
 
 Contributions are always welcome!
-
-
-
 
 ## License
 

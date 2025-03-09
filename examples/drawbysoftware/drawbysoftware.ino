@@ -1,4 +1,4 @@
-/*
+
 // This example uses udp protocol to receive data which is sent through a python program 
 //by SUMAN SAHA
 //my repo https://github.com/circuito-suman/74HC595ledmatrixlibrary
@@ -35,7 +35,7 @@ ledMatrix.drawLedHorizontal();
 
 }
 
-*/
+
 
 
 
