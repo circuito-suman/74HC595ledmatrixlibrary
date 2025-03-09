@@ -108,20 +108,19 @@ void LEDMatrix::toggleMode()
 {
   if (isInAPMode)
   {
-    // Reinitialize OTA in STA mode
     switchToSTAMode();
   }
   else
   {
-    // Stop OTA before AP mode
     switchToAPMode();
   }
 }
 
-void LEDMatrix::but(){
- if (buttonPressed) // 8 is the optimal speed
+void LEDMatrix::but()
+{
+  if (buttonPressed) // 8 is the optimal speed
   {
-   buttonPressed = false; // Reset flag
+    buttonPressed = false; // Reset flag
     toggleMode();
     clearDisplay();
   }
@@ -194,7 +193,6 @@ void LEDMatrix::processPostData()
   {
     UDPServer.read(packetBuffer, PACKAGE_SIZE);
 
-    // Check if the packet starts with a prefix indicating a scroll direction
     if ((packetBuffer[0] == 'l' || packetBuffer[0] == 'r' || packetBuffer[0] == 'u' || packetBuffer[0] == 'd') && packetBuffer[1] == '/')
     {
       // Extract the rest of the packet as a string
@@ -206,10 +204,8 @@ void LEDMatrix::processPostData()
       }
       Serial.println(" ");
 
-      // Call the loadstring function with the extracted string
       loadString(receivedString.c_str());
 
-      // Call the appropriate text scrolling function based on the prefix
       switch (packetBuffer[0])
       {
       case 'l':
@@ -228,7 +224,6 @@ void LEDMatrix::processPostData()
     }
     else
     {
-      // Process the packet as usual if it doesn't start with a known prefix
       for (int i = 0; i < PACKAGE_SIZE; i++)
       {
         colsVal[i] = packetBuffer[i];
@@ -377,7 +372,6 @@ void LEDMatrix::displayScrollVertical(int position, int n)
 
 void LEDMatrix::shutdown(bool status)
 {
-  // Implementation for shutdown
   if (status)
   {
     digitalWrite(LED_OUT, LOW); // Set to LOW to shutdown
@@ -392,7 +386,6 @@ void LEDMatrix::shutdown(bool status)
 
 void LEDMatrix::clearDisplay()
 {
-  // Implementation for clearDisplay
   for (int i = 0; i < ROW_CNT; i++)
   {
     writeCell(0x00, 1 << i); // Clear all rows
@@ -427,13 +420,11 @@ void LEDMatrix::setLed(int addr, int row, int col, boolean state)
 
 void LEDMatrix::setRow(int row, byte value)
 {
-  // Implementation for setRow
   writeCell(value, 1 << row);
 }
 
 void LEDMatrix::setColumn(int col, byte value)
 {
-  // Implementation for setColumn
   for (int i = 0; i < ROW_CNT; i++)
   {
     if (value & (1 << i))
